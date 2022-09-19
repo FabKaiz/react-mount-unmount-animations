@@ -1,20 +1,14 @@
-import { useState } from "react";
 import "./App.css";
+import MultipleElementsFading from "./components/MultipleElementsFading";
+import OneElementFading from "./components/OneElementFading";
+import SequenceAnimations from "./components/StaggeredAnimation";
 
 const App = () => {
-  const [isVisible, setIsVisible] = useState(false);
   return (
     <div className="App">
-      <button
-        onClick={() => {
-          setIsVisible((v) => !v);
-        }}
-      >
-        {isVisible ? "unmount" : "mount"}
-      </button>
-      <div className="container">
-        {isVisible ? <div className="item" /> : ""}
-      </div>
+      <OneElementFading />
+      <MultipleElementsFading />
+      <SequenceAnimations />
     </div>
   );
 };
